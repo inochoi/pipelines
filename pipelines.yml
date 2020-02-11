@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: myGitHub
-      path: myself/MyFirstRepo
+      path: inochoi/pipelines
 
 pipelines:
   - name: pipeline_hello_world
