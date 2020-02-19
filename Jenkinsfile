@@ -1,7 +1,9 @@
 node {
-    def server = SERVER_ID: artifactory
+    def server = Artifactory.server 'artifactory'
     def rtMaven = Artifactory.newMavenBuild()
     def buildInfo
+    server.username = 'admin'
+    server.password = 'password123'
 
     stage ('Clone') {
         git url: 'https://github.com/JFrog/project-examples.git'
