@@ -3,6 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
- task: CmdLine@2
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: CmdLine@2
   inputs:
     script: 'curl https://mill.jfrog.team:12734/artifactory -vvv'
