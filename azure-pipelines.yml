@@ -6,5 +6,3 @@
 - task: CmdLine@2
   inputs:
     script: 'curl https://mill.jfrog.team:12734/artifactory -vvv'
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
