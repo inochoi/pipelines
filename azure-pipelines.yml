@@ -12,4 +12,18 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'curl http://mill.jfrog.team:12753/artifactory -vvv'
+    script: 'curl https://inochoi2.jfrog.io/artifactory -vvv'
+
+- task: ArtifactoryGenericUpload@2
+  inputs:
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "/Users/inhoc/Downloads/myagent/license.html",
+            "target": "example-repo-local"
+          }
+        ]
+      }
+    failNoOp: true
