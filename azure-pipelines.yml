@@ -28,3 +28,17 @@ steps:
         ]
       }
     failNoOp: true
+- task: ArtifactoryGenericUpload@2
+  inputs:
+    artifactoryService: 'inochoi2.jfrog.io'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "/Users/inhoc/Downloads/myagent/*.sh",
+            "target": "example-repo-local"
+          }
+        ]
+      }
+    failNoOp: true
