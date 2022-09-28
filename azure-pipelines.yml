@@ -14,17 +14,17 @@ steps:
   inputs:
     script: 'curl https://inochoi2.jfrog.io/artifactory -vvv'
 
-    - task: ArtifactoryGenericDownload@3
-      inputs:
-        connection: 'inochoi2.jfrog.io'
-        specSource: 'taskConfiguration'
-        fileSpec: |
+- task: ArtifactoryGenericDownload@3
+  inputs:
+    connection: 'inochoi2.jfrog.io'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
           {
-            "files": [
-              {
-                "pattern": "example-repo-local/*.td",
-                "target": "/Users/inhoc/Downloads/myagent"
-              }
-            ]
+            "pattern": "example-repo-local/*.td",
+            "target": "/Users/inhoc/Downloads/myagent"
           }
-        failNoOp: true
+        ]
+      }
+    failNoOp: true
