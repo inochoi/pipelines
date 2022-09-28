@@ -14,15 +14,15 @@ steps:
   inputs:
     script: 'curl https://inochoi2.jfrog.io/artifactory -vvv'
 
-- task: ArtifactoryGenericUpload@2
+- task: ArtifactoryGenericDownload@3
   inputs:
     specSource: 'taskConfiguration'
     fileSpec: |
       {
         "files": [
           {
-            "pattern": "/Users/inhoc/Downloads/myagent/license.html",
-            "target": "example-repo-local"
+            "pattern": "example-repo-local/*.td",
+            "target": "."
           }
         ]
       }
