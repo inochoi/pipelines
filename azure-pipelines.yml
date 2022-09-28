@@ -22,7 +22,7 @@ steps:
         "files": [
           {
             "pattern": "example-repo-local/*.td",
-            "target": "."
+            "target": "/Users/inhoc/Downloads/myagent"
           }
         ]
       }
