@@ -42,3 +42,9 @@ steps:
         ]
       }
     failNoOp: true
+
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'inochoi2.jfrog.io'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
